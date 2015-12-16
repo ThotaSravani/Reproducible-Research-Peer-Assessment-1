@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PA1_template</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>Reproducible Research: Peer Assessment 1</h1>
+<h2>Loading and preprocessing the data</h2>
+<p>The data for this assignment is contained in a zipped file on the course Github repository.  It can be accessed  at the time of analysis.  However, to ensure that the data is available for analysis even in the absence of an internet connection, this implementation has downloaded the file to be accessed locally at any time.  The structure of the loaded dataframe is shown below.</p>
+<p>```r
+data1 &lt;- &quot;E:Projects/Reproducible-Research-peer-Assessment-1/Reproducible-Research-Peer-Assessment-1/activity.csv&quot;
+data &lt;- read.csv(data1)
+str(data)</p>
+<p>```</p>
+<p>```</p>
+<h2>'data.frame':	17568 obs. of  3 variables:</h2>
+<h2>$ steps   : int  NA NA NA NA NA NA NA NA NA NA ...</h2>
+<h2>$ date    : Factor w/ 61 levels &quot;2012-10-01&quot;,&quot;2012-10-02&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</h2>
+<h2>$ interval: int  0 5 10 15 20 25 30 35 40 45 ...</h2>
+<p>```</p>
+<h2>What is the total number of steps taken per day?</h2>
+<p>The following histogram displays the total number of steps taken per day, ignoring missing values.</p>
+<p>```r
+library(ggplot2)</p>
+<p>data.date &lt;- aggregate(data[1],by=data[2],FUN = sum,na.rm=TRUE)</p>
+<p>hist(data.date$steps, breaks=20, col =&quot;red&quot;,main = &quot;Histogram of Total Number of Steps Taken Per Day&quot;,xlab=&quot;Steps Per Day&quot;)</p>
+<p>```</p>
+<p><img src="Figure/unnamed-chunk-1.png" alt="plot of  unnamed-chunk-1" /></p>
+<p><code>r
+mean(adata.date$steps)</code></p>
+<p>```</p>
+<h2>[1] 9354</h2>
+<p>```</p>
+<p><code>r
+median(adata.date$steps)</code></p>
+<p>```</p>
+<h2>[1] 10395</h2>
+<p>```</p>
+<p><strong>Mean:</strong> Ignoring missing values, the mean number of steps taken per day is 9,354.</p>
+<p><strong>Median:</strong> Ignoring missing values, the median number of steps taken per day is 10,395.</p>
+<h2>What is the average daily activity pattern?</h2>
+<p>Following is a time-series plot of the average number of steps taken during each 5-minute interval during the day.</p>
+<p>```r</p>
+<h1>The following data set contains the sample data aggregated by interval.</h1>
+<p>library(ggplot2)</p>
+<p>averages &lt;- aggregate(x=list(steps=data$steps),by=list(interval=data$interval),FUN=mean,na.rm=TRUE)</p>
+<p>ggplot(data=averages,aes(x=interval,y=steps))+ geom_line()+xlab(&quot;5-minute interval&quot;)+ylab(&quot;Average number of steps taken&quot;)</p>
+<p>```</p>
+<p><img src="Figure/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2" /></p>
+<p><strong>On average across all the days in the dataset,the 5-minute interval contains the maximum number of steps?</strong></p>
+<p><code>r
+averages[which.max(averages$steps),]</code></p>
+<p>```</p>
+<h2>interval steps</h2>
+<h2>104  835 206.2</h2>
+<p>```</p>
+<p>The maximum average steps per period occur at interval 835, with an average of 206.2 steps per 5 minutes (calculated inline).</p>
+<h2>Imputing missing values</h2>
+<p><strong>1) Number of Missing Values</strong></p>
+<p>```r</p>
+<h1>Total records</h1>
+<p>nrow(data)
+```</p>
+<p>```</p>
+<h2>[1] 17568</h2>
+<p>```</p>
+<p>```r</p>
+<h1>Missing records</h1>
+<p>sum(is.na(data$steps))
+```</p>
+<p>```</p>
+<h2>[1] 2304</h2>
+<p>```
+The total number of records in the dataset is 17,568.  Of these, 2,304 contain missing values for number of steps taken.</p>
+<p><strong>2) &amp; 3) - Replacing Missing Values and Creating a New Dataset</strong></p>
+<p>Missing values for steps per interval are replaced by the mean number of steps for that interval, calculated on the non-missing rows.  A new dataset is created that contains these imputed values.</p>
+<p>```r
+library(plyr)</p>
+<p>impute.mean &lt;- function(x) replace(x, is.na(x), mean(x, na.rm = TRUE))</p>
+<p>data.impute &lt;- ddply(data, ~interval, transform, steps = impute.mean(steps))
+```</p>
+<p><strong>4) Histogram, Mean and Median</strong></p>
+<p>The following is a histogram of the total number of steps per day using imputed values for missing values.</p>
+<p>```r</p>
+<h1>The following data set contains the sample data aggregated by date.</h1>
+<p>data.impute.date &lt;- aggregate(data.impute[1],by=data.impute[2],FUN=sum,na.rm=TRUE)</p>
+<p>hist(data.impute.date$steps,breaks=20,col = &quot;steelblue&quot;,main=&quot;Histogram of Total Number of Steps Taken Per Day(Imputed Data)&quot;,xlab=&quot;Steps Per Day&quot;)
+```</p>
+<p><img src="Figure/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3" /> </p>
+<p><code>r
+mean(data.impute.date$steps)</code></p>
+<p>```</p>
+<h2>[1] 10766</h2>
+<p>```</p>
+<p><code>r
+median(data.impute.date$steps)</code></p>
+<p>```</p>
+<h2>[1] 10766</h2>
+<p>```</p>
+<p><strong>Mean:</strong> Ignoring missing values, the mean number of steps taken per day, rounded to the nearest step, is 10,766.</p>
+<p><strong>Median:</strong> Ignoring missing values, the median number of steps taken per day, rounded to the nearest step, is 10,766.</p>
+<p>Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval. The total number of steps taken in such days are set to 0s by default. However, after replacing missing steps values with the mean steps of associated interval value, these 0 values are removed from the histogram of total number of steps taken each day.</p>
+<h2>Are there differences in activity patterns between weekdays and weekends?</h2>
+<p><strong>1. New Factor Variable</strong></p>
+<p>A new factor variable, Day, is created, indicating whether a record pertains to a weekday or to a weekend.</p>
+<p>```r</p>
+<p>data.impute$dateP &lt;- as.POSIXlt(data.impute$date,format=&quot;%Y-%m-%d&quot;)</p>
+<p>data.impute$day &lt;- &quot;Weekday&quot;</p>
+<p>data.impute$day [weekdays(data.impute$dateP) %in% c(&quot;Saturday&quot;,&quot;Sunday&quot;)]</p>
+<p>&lt;- &quot;Weekend&quot;</p>
+<p>```</p>
+<p><strong>2. Weekday/Weekend Comparison</strong></p>
+<p>The following time series plots display the weekday and weekend data separately.  
+</p>
+<p>```r</p>
+<p>data.impute.interval &lt;- aggregate(data.impute[1],
+                                   by=data.impute[c(3,5)],
+                                   FUN=mean,
+                                   na.rm=TRUE)</p>
+<p>library(ggplot2)</p>
+<p>plot &lt;- ggplot(data = data.impute.interval,aes(x=interval,y=steps))+ geom_line()+xlab(&quot;5-minute interval&quot;)+ylab(&quot;Number Of Steps&quot;) </p>
+<p>plot + geom<em>line() + facet</em>wrap(~day,nrow = 2)</p>
+<p>```</p>
+<p><img src="Figure/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4" /> </p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
